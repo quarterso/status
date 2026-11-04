@@ -135,7 +135,7 @@ footer{{color:var(--mute);font-size:13px;margin-top:28px}}footer a{{color:var(--
 def main():
     out = sys.argv[1] if len(sys.argv) > 1 else "site"
     now = int(time.time())
-    history = load_history(os.environ.get("STATUS_HISTORY_URL", "https://quarterso.github.io/status/history.json"))
+    history = load_history(os.environ.get("STATUS_HISTORY_URL", "https://status.quarterfi.com/history.json"))
     results = {name: probe(url, expect) for name, url, expect in SERVICES}
     history = add_check(history, now, results)
     os.makedirs(out, exist_ok=True)

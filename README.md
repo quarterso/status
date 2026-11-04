@@ -1,6 +1,6 @@
 # Quarter status
 
-The live status of Quarter's public services: https://quarterso.github.io/status/
+The live status of Quarter's public services: https://status.quarterfi.com/
 
 A GitHub Actions job checks each service every 10 minutes, from outside our servers, and publishes the page to GitHub Pages. A service is down after two failed checks 5 seconds apart. Going down opens an issue in this repository and coming back closes it, so watchers get an email.
 

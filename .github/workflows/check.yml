@@ -40,7 +40,7 @@ jobs:
           for name in "Sandbox gateway" "Rulebook feed" "Website"; do
             open=$(gh issue list --state open --search "in:title \"Down: $name\"" --json number --jq '.[0].number')
             if grep -qxF "$name" down.txt; then
-              [ -n "$open" ] || gh issue create --title "Down: $name" --body "Failed two checks in a row at $(date -u '+%Y-%m-%d %H:%M UTC'). https://quarterso.github.io/status/"
+              [ -n "$open" ] || gh issue create --title "Down: $name" --body "Failed two checks in a row at $(date -u '+%Y-%m-%d %H:%M UTC'). https://status.quarterfi.com/"
             elif [ -n "$open" ]; then
               gh issue close "$open" --comment "Back up at $(date -u '+%Y-%m-%d %H:%M UTC')."
             fi
